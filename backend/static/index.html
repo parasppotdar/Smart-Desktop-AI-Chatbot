@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Smart Desktop AI Study Assistant"
+    >
+
+    <title>Smart Desktop AI Study Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div class="brand-text">
+
+                <div class="brand-title">
+                    Study Assistant
+                </div>
+
+                <div class="brand-subtitle">
+                    AI Learning Companion
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="newChatBtn"
+            class="new-chat-btn"
+        >
+            <span class="plus-icon">＋</span>
+            <span>New Chat</span>
+        </button>
+
+
+        <div class="sidebar-section-title">
+            RECENT CHATS
+        </div>
+
+
+        <div
+            id="historyList"
+            class="history-list"
+        ></div>
+
+
+        <div class="sidebar-footer">
+
+            <div class="connection-status">
+
+                <span class="status-dot"></span>
+
+                <span>AI Online</span>
+
+            </div>
+
+            <div class="version-text">
+                Study Assistant V1
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CHAT
+    ========================== -->
+
+    <main class="main-area">
+
+
+        <!-- Top bar -->
+
+        <header class="topbar">
+
+            <div class="topbar-info">
+
+                <h1>
+                    Smart Desktop AI
+                </h1>
+
+                <p>
+                    Your personal study companion
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <div class="ai-badge">
+                    AI
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Messages -->
+
+        <section
+            id="messages"
+            class="messages"
+        >
+
+            <div
+                id="welcome"
+                class="welcome"
+            >
+
+                <div class="welcome-icon">
+                    ✦
+                </div>
+
+                <h2>
+                    How can I help you study?
+                </h2>
+
+                <p>
+                    Ask me about concepts, problems,
+                    notes, revision or exam preparation.
+                </p>
+
+
+                <div class="suggestions">
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="Explain Kirchhoff's Voltage Law in very simple language."
+                    >
+                        Explain a concept
+                    </button>
+
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="Create a simple 7-day study plan for Engineering Mathematics."
+                    >
+                        Create a study plan
+                    </button>
+
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="Quiz me on basic physics concepts."
+                    >
+                        Start a quiz
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Input -->
+
+        <div class="input-area">
+
+            <div class="input-container">
+
+                <textarea
+                    id="messageInput"
+                    rows="1"
+                    placeholder="Ask anything about your studies..."
+                    aria-label="Message"
+                ></textarea>
+
+
+                <button
+                    id="sendBtn"
+                    class="send-btn"
+                    aria-label="Send message"
+                    title="Send"
+                >
+                    <span>➤</span>
+                </button>
+
+            </div>
+
+
+            <div class="input-disclaimer">
+                AI can make mistakes. Verify important information.
+            </div>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+<!-- Markdown renderer -->
+<script
+    src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+></script>
+
+
+<!-- HTML sanitizer -->
+<script
+    src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"
+></script>
+
+
+<!-- MathJax configuration -->
+
+<script>
+
+window.MathJax = {
+
+    tex: {
+
+        inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+        ],
+
+        displayMath: [
+            ['$$', '$$'],
+            ['\\[', '\\]']
+        ]
+
+    },
+
+    svg: {
+
+        fontCache: 'global'
+
+    }
+
+};
+
+</script>
+
+
+<!-- MathJax -->
+
+<script
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"
+></script>
+
+
+<!-- App JavaScript -->
+
+<script
+    src="/static/script.js"
+></script>
+
+
+</body>
+</html>
